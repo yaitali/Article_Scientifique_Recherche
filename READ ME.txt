@@ -1,0 +1,93 @@
+********************************************************************************
+---------------------------- 1- Installation de la BDD -------------------------
+********************************************************************************
+
+1- ouvrir PHPMYADMIN
+2- crée une base de donnée vide avec le nom : touitos avec l'encodage utf8_general_ci
+3- allez dans la section Import ( ou importer )
+4- cliquer sur le bouton chose file
+5- choisissez le fichier touitos.sql
+6- la bdd est bien importé, vous devez voir un message de succé en vert
+
+********************************************************************************
+---------------------------- 2- Structure de l'application ---------------------
+********************************************************************************
+1- les dossiers :
+
+le dossier css/ contien les feuilles de styles css
+le dossier imgs contien les images du site
+le dossier js contien les fichier javascript de site
+le dossier php contien les fichiers php du traitement des données
+le dossier pictures contien les photos des profils des utilisateurs du site
+
+2- le fichier php/dbConnect.php
+contien le code basic pour assurer une connexion sécurisé avec la base de donnée
+j'ai utiliser la class PDO pour assuré la sécurité des données, des requettes et tt
+
+3- le fichier php/classe_utilisateur.php
+********************************************************************************
+---------------------------- 3- La class utilisateur ---------------------
+********************************************************************************
+contient la classe demandé dans le TP , la classe qui fait l'intérraction entre l'utilisateur  X ces données 
+
+   3-1 explication des méthodes :
+      - la méthode inscription() :
+        aprés qu'on crée un objet de type User, on doit l'inséré dans la BDD, cette méthode aassure une insertion sécurisé dans la BDD
+        , pour plus de sécurité, j'ai utilisé la fonction md5() pour crypter le mot de passe
+
+      on utilise les méthodes statics, pour ne pas avoir besoin de crée a chaque fois une instance de l'objet utisateur
+      - la méthode staticre recherche_utilisateur($username)
+      cette méthode a comme role, de faire la recherche d'un utilisateur donnée, et nous retourne le résultat de la recherche
+
+      - la méthode static MiseAJour()
+      cete méthode prend en paramètres les nouvelles informations du profil de l'utilisateur, et met a jour son profil
+
+      - la méthode static AfficherProfil($id)
+      prend en paramètre l'identificateur de l'utilisateur, et nous retourne son profil.
+
+      - la méthode static AjouterAbonnement()
+        prend en paramètres, les informations de nouvel abonnement, et elle crée cet abonnement
+
+      - la méthode NbrSuiveurs ()
+      elle calcule le nombre des abonement et on l'affiche dans le menu
+
+      - la méthode static EstAbonner()
+      pour vérifier si un utilisateur est aboonné a un autre utilisateur ou pas
+
+      - la méthode static GestionAbonnement()
+      nous donne la liste des abonnement d'un utilisateur
+
+      - la méthode static EffacerAbonnement()
+      a pour role de supprimer un abonnement
+
+      - la méthode statc Envoi_Msg()
+      pour envoyer un message
+
+      - la méthode static NbrMessages()
+      calcule le nombre des messages dans la boite de réception d'un utilisateur
+
+      - la méthode static Affiche_Msg()
+      nous donne tout les messages pour l'utilisateur connecté
+
+      la méthode static Info_envoi)
+      elle nous donne les informations de la personne qui a envoyé le message + autre infos
+
+
+
+      ********************************************************************************
+      ---------------------------- 3- utilisateurs ---------------------
+      ********************************************************************************
+pseudonyme test 
+mot de passe test
+pseudonyme yasmina
+mot de passe yasmina
+pseudonyme karim 
+mot de passe karim
+pseudonyme eric 
+mot de passe eric
+
+     ********************************************************************************
+      ---------------------------- 3- URL POUR TESTER ---------------------
+      ********************************************************************************
+  			http://marseille/~11508163/connexion.php
+
